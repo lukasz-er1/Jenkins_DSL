@@ -1,4 +1,4 @@
-pipelineJob('QT_5G_SBTS00') {
+pipelineJob('pipeline job 1') {
     properties {
         buildDiscarder {
             strategy {
