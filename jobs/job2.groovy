@@ -1,6 +1,6 @@
 job("Test job 2") {
-    steps {
-        node("pi") {
+    node("pi") {
+        steps {
             shell("ls /home/pi")
         }
     }
