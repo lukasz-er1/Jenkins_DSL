@@ -61,7 +61,7 @@ def initial_reporting() {
     echo "${node}"
 
     build job: 'seed',
-        wait: true,
+        wait: true
         // parameters: [
         //     string(name: "", value: "")
         // ]
