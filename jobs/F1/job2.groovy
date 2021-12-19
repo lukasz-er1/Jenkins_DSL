@@ -9,7 +9,7 @@ freeStyleJob('F1/Test_RUN') {
         booleanParam("reporting", defaultValue=false, "send report or not")
     }
 
-    def node = params.baseline.contains("pi") ? "pi" : "master"
+    def node = env.baseline.contains("pi") ? "pi" : "master"
     label(node)
     steps {
         shell("ls /home/pi")
