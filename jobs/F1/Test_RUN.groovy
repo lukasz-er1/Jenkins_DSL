@@ -1,3 +1,6 @@
+folder('F1') {
+    description('Folder containing all jobs for container1')
+}
 pipelineJob('F1/Test_RUN') {
     properties {
         buildDiscarder {
