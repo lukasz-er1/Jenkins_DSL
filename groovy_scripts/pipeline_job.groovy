@@ -60,7 +60,7 @@ def initial_reporting() {
     echo "REPORTING!"
     echo "baseline: $env.baseline"
 
-    build job: 'Test job 2',
+    build job: 'F1/Test_RUN',
         wait: true
         parameters: [
             string(name: "reporting", value: true)

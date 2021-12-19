@@ -1,4 +1,4 @@
-freeStyleJob('QT_Downloader') {
+freeStyleJob('F1/Test_RUN') {
     label("pi")
     description('It is a job for downloading software packages')
     logRotator {
