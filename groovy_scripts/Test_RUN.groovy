@@ -1,8 +1,6 @@
 pipeline {
-    test1()
-    def node_check = env.baseline.contains("pi") ? "pi" : "master"
     agent {
-        label(node_check)
+        label("master")
     }
     options {
         timestamps()
@@ -11,20 +9,20 @@ pipeline {
     stages {
         stage("XX") {
             steps {
-                shell("ls /home/pi")
-                shell(readFileFromWorkspace("bash_scripts/prepare_test.sh"))
-                customPythonBuilder {
-                    home('/usr/bin/python')
-                    command(readFileFromWorkspace("python_scripts/test.py"))
-                    nature('python')
-                    ignoreExitCode(false)
+                script {
+                    echo "baseline: ${env.baseline}"
+                    def node_name = env.baseline.contains("arm_") ? "pi" : "master"
+                    node(node_name) {
+                        echo "baseline: ${env.baseline}"
+                        if (node_name == "pi") {
+                            sh "ls /home/pi"
+                        }
+                        else {
+                            sh "ls /home/"
+                        }
+                    }
                 }
             }
         }
     }
-}
-
-
-def test1() {
-    echo "baseline: ${env.baseline}"
 }
