@@ -63,7 +63,7 @@ def initial_reporting() {
     build job: 'F1/Test_RUN',
         wait: true
         parameters: [
-            string(name: "baseline", value: "${env.baseline}")
+            string(name: 'baseline', value: "test")
         ]
 }
 
