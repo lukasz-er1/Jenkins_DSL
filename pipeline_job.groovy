@@ -1,4 +1,7 @@
 pipeline {
+    agent {
+        label("pi")
+    }
     options {
         timestamps()
         // ansiColor('xterm')
