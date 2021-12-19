@@ -3,11 +3,11 @@ job("Test job 2") {
         stringParam('baseline', '', 'Tested software baseline')
         booleanParam("reporting", defaultValue=false, "send report or not")
     }
+    label("pi")
     steps {
-        agent {
-            label("pi") {
-                sh "ls /home/pi"
-            }
+        {
+            shell("ls /home/pi")
         }
+
     }
 }
