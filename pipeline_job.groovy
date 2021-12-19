@@ -33,12 +33,6 @@ pipeline {
                 script {
                     println("\u001B[34m RUNNING TEST \u001B[0m")
                 }
-                customPythonBuilder {
-                    home('/usr/bin/python')
-                    command(readFileFromWorkspace("python_scripts/test.py"))
-                    nature('python')
-                    ignoreExitCode(false)
-                }
             }
         }
         
