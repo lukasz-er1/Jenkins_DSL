@@ -1,4 +1,4 @@
-job("Test job 2") {
+freeStyleJob("Test job 2") {
     label("pi")
     parameters {
         stringParam('baseline', '', 'Tested software baseline')
