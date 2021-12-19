@@ -1,4 +1,4 @@
-freeStyleJob('F1/Test_RUN') {
+pipelineJob('F1/Test_RUN') {
     description('It is a job for downloading software packages')
     logRotator {
         daysToKeep(30)
@@ -25,5 +25,5 @@ freeStyleJob('F1/Test_RUN') {
 
 
 def test1() {
-    echo "baseline: ${script.env.baseline}"
+    echo "baseline: ${env.baseline}"
 }
