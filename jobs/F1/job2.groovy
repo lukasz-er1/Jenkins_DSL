@@ -1,5 +1,4 @@
 freeStyleJob('F1/Test_RUN') {
-    label("pi")
     description('It is a job for downloading software packages')
     logRotator {
         daysToKeep(30)
@@ -9,6 +8,9 @@ freeStyleJob('F1/Test_RUN') {
         stringParam('baseline', '', 'Tested software baseline')
         booleanParam("reporting", defaultValue=false, "send report or not")
     }
+
+    def node = params.baseline.contains("pi") ? "pi" : "master"
+    label(node)
     steps {
         shell("ls /home/pi")
         shell(readFileFromWorkspace("bash_scripts/prepare_test.sh"))
