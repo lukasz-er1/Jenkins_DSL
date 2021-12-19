@@ -1,0 +1,24 @@
+pipelineJob('F1/Test_RUN') {
+    properties {
+        buildDiscarder {
+            strategy {
+                logRotator {
+                    daysToKeepStr('30')
+                    numToKeepStr('100')
+                    artifactDaysToKeepStr('30')
+                    artifactNumToKeepStr('100')
+                }
+            }
+        }
+    }
+    parameters {
+        stringParam('baseline', '', 'Tested software baseline')
+        booleanParam("reporting", defaultValue=false, "send report or not")
+    }
+    definition {
+        cps {
+            script(readFileFromWorkspace('groovy_scripts/Test_RUN.groovy'))
+            sandbox()
+        }
+    }
+}
