@@ -25,5 +25,5 @@ pipelineJob('F1/Test_RUN') {
 
 
 def test1() {
-    echo "baseline: ${env.baseline}"
+    echo "baseline: ${params.baseline}"
 }
