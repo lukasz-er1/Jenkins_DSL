@@ -1,4 +1,7 @@
-pipelineJob('pipeline job 1') {
+folder('container1') {
+    description('Folder containing all jobs for container1')
+}
+pipelineJob('container1/pipeline job 1') {
     properties {
         buildDiscarder {
             strategy {
