@@ -9,7 +9,7 @@ freeStyleJob('F1/Test_RUN') {
         booleanParam("reporting", defaultValue=false, "send report or not")
     }
 
-    def node = env.baseline.contains("pi") ? "pi" : "master"
+    test1()
     label(node)
     steps {
         shell("ls /home/pi")
@@ -21,4 +21,9 @@ freeStyleJob('F1/Test_RUN') {
             ignoreExitCode(false)
         }
     }
+}
+
+
+def test1() {
+    echo "baseline: $env.baseline"
 }
