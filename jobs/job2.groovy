@@ -4,8 +4,10 @@ job("Test job 2") {
         booleanParam("reporting", defaultValue=false, "send report or not")
     }
     steps {
-        node("pi") {
-            shell("ls /home/pi")
+        script {
+            node("pi") {
+                shell("ls /home/pi")
+            }
         }
     }
 }
