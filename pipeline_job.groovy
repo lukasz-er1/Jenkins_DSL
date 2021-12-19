@@ -19,7 +19,10 @@ pipeline {
             steps {
                 stage_title("INITIAL REPORTING")
                 script {
-                    initial_reporting()
+                    node('master') {
+                        initial_reporting()
+                    }
+                    
                 }
             }
         }
@@ -57,11 +60,11 @@ def initial_reporting() {
     echo "REPORTING!"
     echo "baseline: $env.baseline"
 
-    build job: 'seed',
+    build job: 'Test job 2',
         wait: true
-        // parameters: [
-        //     string(name: "", value: "")
-        // ]
+        parameters: [
+            string(name: "reporting", value: true)
+        ]
 }
 
 // test

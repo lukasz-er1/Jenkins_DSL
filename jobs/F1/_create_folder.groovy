@@ -1,3 +1,3 @@
-folder('container2') {
+folder('F1') {
     description('Folder containing all jobs for container1')
 }

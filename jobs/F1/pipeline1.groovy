@@ -1,4 +1,4 @@
-pipelineJob('container2/pipeline job 1') {
+pipelineJob('F1/pipeline job 1') {
     properties {
         buildDiscarder {
             strategy {
