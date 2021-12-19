@@ -52,7 +52,7 @@ def stage_title(title) {
 
 def initial_reporting() {
     echo "REPORTING!"
-    echo "${node}"
+    echo "baseline: $env.baseline"
 
     build job: 'seed',
         wait: true
