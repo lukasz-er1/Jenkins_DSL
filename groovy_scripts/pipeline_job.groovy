@@ -61,10 +61,8 @@ def initial_reporting() {
     echo "baseline: $env.baseline"
 
     build job: 'F1/Test_RUN',
-        wait: true
+        wait: true,
         parameters: [
             string(name: "SW", value: "test")
         ]
 }
-
-// test
