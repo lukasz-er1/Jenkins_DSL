@@ -1,10 +1,4 @@
 pipeline {
-    agent { 
-        node {
-            label "pi"
-            customWorkspace ((node.contains('UTE') && node.contains('5G')) ? "workspace/${env.JOB_BASE_NAME}/${env.BUILD_NUMBER}" : "")
-        }
-    }
     options {
         timestamps()
         // ansiColor('xterm')
@@ -66,3 +60,5 @@ def initial_reporting() {
         //     string(name: "", value: "")
         // ]
 }
+
+// test
