@@ -4,9 +4,9 @@ job("Test job 2") {
         booleanParam("reporting", defaultValue=false, "send report or not")
     }
     steps {
-        script {
-            node("pi") {
-                shell("ls /home/pi")
+        agent {
+            label("pi") {
+                sh "ls /home/pi"
             }
         }
     }
