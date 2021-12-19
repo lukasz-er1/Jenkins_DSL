@@ -15,7 +15,7 @@ pipelineJob('F1/Test_RUN') {
         }
     }
     parameters {
-        stringParam(defaultValue: "", description: 'K', name: 'baseline')
+        stringParam(defaultValue="", description='K', name='baseline')
         booleanParam("reporting", defaultValue=false, "send report or not")
     }
     definition {
