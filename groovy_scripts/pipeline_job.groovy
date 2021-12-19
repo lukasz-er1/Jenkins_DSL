@@ -64,7 +64,7 @@ def initial_reporting() {
         wait: true
         parameters: [
             string(name: "reporting", value: true),
-            string(name: "baseline", value: env.baseline)
+            string(name: "baseline", value: "${env.baseline}")
         ]
 }
 
