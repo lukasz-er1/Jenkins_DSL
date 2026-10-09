@@ -1,0 +1,29 @@
+name: Robot Framework tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  robot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Robot Framework
+        run: pip install robotframework
+
+      - name: Run tests
+        run: robot --outputdir results tests/
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: robot-results
+          path: results/
